@@ -140,10 +140,43 @@
                         inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        /* Premium custom drop-down styling for select elements in dark glassmorphism */
         select option {
             background: #0f172a;
             color: var(--text-main);
+        }
+
+        /* 📋 Premium Checkbox Styling for Form Acknowledgement */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 28px 0 20px 0;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-top: 2px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--neon-accent);
+        }
+        
+        .checkbox-label {
+            color: var(--text-muted);
+            font-size: 11px;
+            line-height: 1.5;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .checkbox-label span {
+            color: var(--text-main);
+            font-weight: 600;
         }
 
         button {
@@ -223,35 +256,29 @@
             <label for="email">Official Corporate Institution Email ID</label>
             <input type="email" id="email" name="email" required placeholder="name@college.edu.in">
         </div>
+
+        <!-- 📝 FORM ACKNOWLEDGEMENT CHECKBOX SECTION -->
+        <div class="checkbox-group">
+            <div class="checkbox-container">
+                <input type="checkbox" id="acknowledgement" name="acknowledgement" required>
+            </div>
+            <label for="acknowledgement" class="checkbox-label">
+                <span>ACKNOWLEDGEMENT:</span> I hereby verify that I am an authorized representative of this engineering campus and confirm our institutional intent to evaluate the turnkey 4-Domain Industry 4.0 Lab proposal framework.
+            </label>
+        </div>
         
         <button type="submit" id="submitBtn">Request Project Evaluation Access</button>
     </form>
 </div>
 
 <script>
-    // System automatically routes to your working macro endpoint URL
-    const GOOGLE_SCRIPT_WEBAPP_URL = 'https://google.com';
+    // YOUR LIVE COPIED WEB APP URL LINK CONNECTED BELOW PERFECTLY
+    const GOOGLE_SCRIPT_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzYzVTiqBttSkcoVkMAnbvidmKaFfR_78Lj6dv9pnSg2J9JviWOGXCKf3KPH4yQrs4_/exec';
     
     const form = document.getElementById('eliteLeadForm');
     const submitBtn = document.getElementById('submitBtn');
 
     form.addEventListener('submit', e => {
         e.preventDefault();
-        submitBtn.disabled = true;
-        submitBtn.innerText = "VERIFYING AUTHORIZATION ACCESS...";
-
-        const currentProfileRole = document.getElementById('role').value;
-
-        fetch(GOOGLE_SCRIPT_WEBAPP_URL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                // THE ADVANCED B2B INTELLIGENT FRICTION ROUTING LOGIC GATE PIPELINE
-                if(currentProfileRole === "Other / Vendor Profile" || currentProfileRole === "Lab Instructor / Technician") {
-                    // Route standard tier users out away toward static asset links viewing structures
-                    window.location.href = "https://ajunexus.in";
-                } else {
-                    // Generate personalized custom message strings matching high-ticket corporate profiles
-                    const leadName = document.getElementById('name').value;
-                    const leadCampus = document.getElementById('institution').value;
-                    
-                    const encryptedWhatsAppString = `Hello AJU Nexus Team, this is ${leadName} holding the portfolio position designation of ${currentProfileRole} at ${leadCampus}. We have passed our initial portal data synchronization submission parameters and wish to initiate direct operational clearance reviews regarding our target ₹50L - ₹6C Industry 4.0 Lab Continuum Framework proposal. Let us configure an in-person boardroom consultation appointment.`;
-                    
+        
+        // Safety validation to verify checkbox status before firing streaming queries
