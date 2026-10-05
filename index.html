@@ -42,16 +42,8 @@
             z-index: 0;
             pointer-events: none;
         }
-        body::before {
-            top: -10%;
-            left: -10%;
-            background: var(--primary-glow);
-        }
-        body::after {
-            bottom: -10%;
-            right: -10%;
-            background: var(--secondary-glow);
-        }
+        body::before { top: -10%; left: -10%; background: var(--primary-glow); }
+        body::after { bottom: -10%; right: -10%; background: var(--secondary-glow); }
 
         .glass-container {
             position: relative;
@@ -62,8 +54,7 @@
             border: 1px solid var(--glass-border);
             padding: 50px 40px;
             border-radius: 24px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             width: 100%;
             max-width: 480px;
             box-sizing: border-box;
@@ -72,9 +63,7 @@
 
         .glass-container:hover {
             transform: translateY(-5px);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 
-                        0 0 40px rgba(30, 58, 138, 0.2),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(30, 58, 138, 0.2);
         }
 
         .branding-title {
@@ -101,71 +90,35 @@
             text-shadow: 0 0 10px var(--neon-glow);
         }
 
-        .form-group {
-            margin-bottom: 24px;
-            position: relative;
+        .form-group { margin-bottom: 24px; position: relative; }
+        label { display: block; font-weight: 600; color: var(--text-muted); margin-bottom: 9px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        input[type="text"], input[type="tel"], input[type="email"], select {
+            width: 100%; padding: 14px 16px; border: 1px solid var(--glass-border); border-radius: 12px;
+            box-sizing: border-box; font-size: 15px; color: var(--text-main); background: rgba(255, 255, 255, 0.02);
+            transition: all 0.3s ease;
         }
+        input:focus, select:focus { outline: none; border-color: var(--neon-accent); background: rgba(255, 255, 255, 0.05); }
+        select option { background: #0f172a; color: var(--text-main); }
 
-        label {
-            display: block;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 9px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            box-sizing: border-box;
-            font-size: 15px;
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.02);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        input::placeholder {
-            color: #475569;
-        }
-
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--neon-accent);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-
-        select option {
-            background: #0f172a;
-            color: var(--text-main);
-        }
-
-        /* 📋 Premium Checkbox Styling for Form Acknowledgement */
+        /* Premium Checkbox Styling */
         .checkbox-group {
             display: flex;
             align-items: flex-start;
             gap: 12px;
             margin: 28px 0 20px 0;
         }
-        
         .checkbox-container {
             display: flex;
             align-items: center;
             margin-top: 2px;
         }
-        
         .checkbox-group input[type="checkbox"] {
             width: 18px;
             height: 18px;
             cursor: pointer;
             accent-color: var(--neon-accent);
         }
-        
         .checkbox-label {
             color: var(--text-muted);
             font-size: 11px;
@@ -173,48 +126,19 @@
             cursor: pointer;
             user-select: none;
         }
-        
         .checkbox-label span {
             color: var(--text-main);
             font-weight: 600;
         }
 
         button {
-            width: 100%;
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: #ffffff;
-            border: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            margin-top: 15px;
+            width: 100%; background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #ffffff;
+            border: none; padding: 16px; border-radius: 12px; font-size: 14px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
         }
-
-        button:hover {
-            background: linear-gradient(135deg, #1d4ed8 0%, #60a5fa 100%);
-            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.5), 
-                        0 0 15px var(--neon-glow);
-            transform: scale(1.02);
-        }
-
-        button:active {
-            transform: scale(0.98);
-        }
-
-        button:disabled {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--glass-border);
-            color: #475569;
-            cursor: not-allowed;
-            box-shadow: none;
-            transform: none;
-        }
+        button:hover { background: linear-gradient(135deg, #1d4ed8 0%, #60a5fa 100%); box-shadow: 0 0 15px var(--neon-glow); transform: scale(1.02); }
+        button:disabled { background: rgba(255, 255, 255, 0.1); color: #475569; cursor: not-allowed; box-shadow: none; transform: none; }
     </style>
 </head>
 <body>
@@ -223,7 +147,8 @@
     <div class="branding-title">AJU NEXUS</div>
     <div class="branding-subtitle">The Silicon Corridor Initiative</div>
     
-    <form id="eliteLeadForm">
+    <!-- HARD-WIRED REINFORCEMENT: Explicitly stops default browser link submission overrides -->
+    <form id="eliteLeadForm" onsubmit="event.preventDefault(); handleFormSubmit();">
         <div class="form-group">
             <label for="name">Executive Full Name</label>
             <input type="text" id="name" name="name" required placeholder="Dr. / Trustee Name">
@@ -237,7 +162,7 @@
         <div class="form-group">
             <label for="role">Management Designation Portfolio</label>
             <select id="role" name="role" required>
-                <option value="" disabled selected>Select institutional clearance profile...</option>
+                <option value="" disabled selected>Select institutional profile...</option>
                 <option value="Chancellor / Trustee / Chairman">Chancellor / Trustee / Chairman</option>
                 <option value="Principal / Dean / HOD">Principal / Dean Academics / HOD</option>
                 <option value="Placement Director / TPO">Placement Director / Corporate Officer</option>
@@ -257,7 +182,7 @@
             <input type="email" id="email" name="email" required placeholder="name@college.edu.in">
         </div>
 
-        <!-- 📝 FORM ACKNOWLEDGEMENT CHECKBOX SECTION -->
+        <!-- THE PREMIUM B2B ACKNOWLEDGEMENT REQUIREMENT CHECKBOX -->
         <div class="checkbox-group">
             <div class="checkbox-container">
                 <input type="checkbox" id="acknowledgement" name="acknowledgement" required>
@@ -272,13 +197,29 @@
 </div>
 
 <script>
-    // YOUR LIVE COPIED WEB APP URL LINK CONNECTED BELOW PERFECTLY
-    const GOOGLE_SCRIPT_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzYzVTiqBttSkcoVkMAnbvidmKaFfR_78Lj6dv9pnSg2J9JviWOGXCKf3KPH4yQrs4_/exec';
+    const GOOGLE_SCRIPT_WEBAPP_URL = 'https://google.com';
     
-    const form = document.getElementById('eliteLeadForm');
-    const submitBtn = document.getElementById('submitBtn');
-
-    form.addEventListener('submit', e => {
-        e.preventDefault();
+    function handleFormSubmit() {
+        const form = document.getElementById('eliteLeadForm');
+        const submitBtn = document.getElementById('submitBtn');
         
-        // Safety validation to verify checkbox status before firing streaming queries
+        if(!document.getElementById('acknowledgement').checked) {
+            alert('Please accept the institutional validation acknowledgement to proceed.');
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.innerText = "VERIFYING AUTHORIZATION ACCESS...";
+
+        const currentProfileRole = document.getElementById('role').value;
+        const formData = new FormData(form);
+
+        // Direct fetch interface streaming connection packets straight to your active spreadsheet macro engine
+        fetch(GOOGLE_SCRIPT_WEBAPP_URL, { method: 'POST', body: formData })
+            .then(response => {
+                if(currentProfileRole === "Other / Vendor Profile" || currentProfileRole === "Lab Instructor / Technician") {
+                    window.location.href = "https://ajunexus.in";
+                } else {
+                    const leadName = document.getElementById('name').value;
+                    const leadCampus = document.getElementById('institution').value;
+                    
